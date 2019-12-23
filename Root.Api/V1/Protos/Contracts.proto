@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "Contracts";
+
+package Contracts;
+
+service Service {
+    rpc Method (Request) returns (Response);
+}
+
+message Request {
+}
+
+message Response {
+}
