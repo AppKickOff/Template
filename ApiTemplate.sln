@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Root.Api", "src\Root.Api\Root.Api.csproj", "{B1712184-7B15-4D58-85FA-2D7C14C832AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Root.Api", "Root.Api\Root.Api.csproj", "{B1712184-7B15-4D58-85FA-2D7C14C832AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Unit", "src\Tests\Tests.Unit\Tests.Unit.csproj", "{17ED41E3-2A99-40EB-A978-D43F4529C864}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{90C86B4E-C02D-4216-AFE2-B894E445A64D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Root.Handlers", "src\Root.Handlers\Root.Handlers.csproj", "{85E9C98F-060E-4234-AE84-9641B9B07F24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Unit", "Tests\Tests.Unit\Tests.Unit.csproj", "{17ED41E3-2A99-40EB-A978-D43F4529C864}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Root.Service.Contracts", "src\Root.Service.Contracts\Root.Service.Contracts.csproj", "{F52CDB1A-EA44-4D35-A1E2-5E969D5809DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Root.Handlers", "Root.Handlers\Root.Handlers.csproj", "{85E9C98F-060E-4234-AE84-9641B9B07F24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Root.Service.Implemenation", "src\Root.Service.Implemenation\Root.Service.Implemenation.csproj", "{BA138BE7-A1E0-4D5D-B10E-734EA4145CC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Root.Service.Contracts", "Root.Service.Contracts\Root.Service.Contracts.csproj", "{F52CDB1A-EA44-4D35-A1E2-5E969D5809DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Root.Service.Implemenation", "Root.Service.Implemenation\Root.Service.Implemenation.csproj", "{BA138BE7-A1E0-4D5D-B10E-734EA4145CC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,5 +88,8 @@ Global
 		{BA138BE7-A1E0-4D5D-B10E-734EA4145CC9}.Release|x64.Build.0 = Release|Any CPU
 		{BA138BE7-A1E0-4D5D-B10E-734EA4145CC9}.Release|x86.ActiveCfg = Release|Any CPU
 		{BA138BE7-A1E0-4D5D-B10E-734EA4145CC9}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{17ED41E3-2A99-40EB-A978-D43F4529C864} = {90C86B4E-C02D-4216-AFE2-B894E445A64D}
 	EndGlobalSection
 EndGlobal
