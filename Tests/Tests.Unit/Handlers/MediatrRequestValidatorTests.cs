@@ -11,20 +11,12 @@ namespace Tests.Unit.Handlers
     public class MediatrRequestValidatorTests
     {
         readonly CancellationToken token = CancellationToken.None;
-        MediatrRequestValidator<object> validator = Substitute.ForPartsOf<MediatrRequestValidator<object>>();
-
-        public MediatrRequestValidatorTests()
-        {
-            validator.RuleFor(s => s)
-                .Must(o => true);
-        }
+        readonly MediatrRequestValidator<object> validator = Substitute.ForPartsOf<MediatrRequestValidator<object>>();
 
         [Fact]
         public async Task Process_CallsValidation()
         {
-            var obj = new object();
-
-            await validator.Process(obj, token);
+            await validator.Process(new object(), token);
 
             await validator.ReceivedWithAnyArgs(1).ValidateAsync(default(ValidationContext) !, token);
         }
