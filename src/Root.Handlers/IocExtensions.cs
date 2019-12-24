@@ -1,6 +1,7 @@
 using MediatR;
 using MediatR.Pipeline;
 using Microsoft.Extensions.DependencyInjection;
+using Root.Handlers.Properties;
 
 namespace Handlers
 {
@@ -12,7 +13,7 @@ namespace Handlers
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
             services.AddSingleton<IMediator, Mediator>();
 
-            services.Scan(a => a.FromExecutingAssembly()
+            services.Scan(a => a.FromAssemblyOf<AssemblyInfo>()
                 .AddClasses(c => c.AssignableTo(typeof(IRequestHandler<>)))
                 .AsMatchingInterface((t, f) => f.AssignableTo(typeof(IRequestHandler<>)))
                 .WithSingletonLifetime()
