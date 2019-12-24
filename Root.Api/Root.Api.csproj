@@ -2,17 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="8.6.0" />
-    <PackageReference Include="Grpc.AspNetCore" Version="2.25.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.26.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="GrpcExtensions.AspNetCore.Validation" Version="2.25.1" />
     <PackageReference Include="Scrutor" Version="3.1.0" />
   </ItemGroup>
   
   <ItemGroup>
     <Protobuf Include="V1\Protos\Contracts.proto" GrpcServices="Server" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Root.Handlers\Root.Handlers.csproj" />
   </ItemGroup>
 
 </Project>

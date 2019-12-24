@@ -7,7 +7,7 @@ namespace Root.Api.IoC
 {
     public static class ValidationExtensions
     {
-        public static IServiceCollection AddValidation(this IServiceCollection services)   
+        public static IServiceCollection AddValidation(this IServiceCollection services)
         {
             services.Scan(s => s.FromApplicationDependencies()
                 .AddClasses(c => c.AssignableTo(typeof(IValidator<>)))
@@ -15,7 +15,7 @@ namespace Root.Api.IoC
                 .WithSingletonLifetime());
 
             services.AddGrpcValidation();
-            
+
             return services;
         }
 
