@@ -2,8 +2,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
 using FluentValidation;
-using Root.Handlers;
 using NSubstitute;
+using Root.Handlers;
 using Xunit;
 
 namespace Tests.Unit.Handlers
@@ -26,7 +26,7 @@ namespace Tests.Unit.Handlers
 
             await validator.Process(obj, token);
 
-            await validator.ReceivedWithAnyArgs(1).ValidateAsync(default(ValidationContext)!, token);
+            await validator.ReceivedWithAnyArgs(1).ValidateAsync(default(ValidationContext) !, token);
         }
 
         [Fact]

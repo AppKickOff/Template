@@ -8,7 +8,7 @@ namespace Handlers
     {
         public static IServiceCollection AddHandlers(this IServiceCollection services)
         {
-            services.AddTransient<ServiceFactory>(p => p.GetService);            
+            services.AddTransient<ServiceFactory>(p => p.GetService);
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
             services.AddSingleton<IMediator, Mediator>();
 

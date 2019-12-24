@@ -1,9 +1,9 @@
-using Root.Api.IoC;
-using Root.Api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Root.Api.IoC;
+using Root.Api.Services;
 
 namespace Root.Api
 {

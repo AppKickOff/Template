@@ -9,7 +9,7 @@ namespace Root.Handlers
     {
         public Task Process(T request, CancellationToken token)
         {
-            return this.ValidateAndThrowAsync(request, cancellationToken: token);			
+            return this.ValidateAndThrowAsync(request, cancellationToken : token);
         }
     }
 }
