@@ -3,20 +3,13 @@ using System.Threading.Tasks;
 using FluentValidation;
 using MediatR.Pipeline;
 
-namespace Root.Handlers.V1.InsertEvent
+namespace Root.Handlers
 {
     public abstract class MediatrRequestValidator<T> : AbstractValidator<T>, IRequestPreProcessor<T>
     {
-        public MediatrRequestValidator()
+        public Task Process(T request, CancellationToken token)
         {
-            ConfigureValidation();
-        }
-
-        protected abstract void ConfigureValidation();        
-
-        public Task Process(T request, CancellationToken cancellationToken)
-        {
-            return ValidateAsync(request, cancellationToken);
+            return this.ValidateAndThrowAsync(request, cancellationToken: token);			
         }
     }
 }
