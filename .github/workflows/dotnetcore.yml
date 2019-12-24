@@ -18,6 +18,8 @@ jobs:
       with:
         dotnet-version: 3.1.100
     - name: Build with dotnet
+      if: success()
       run: dotnet build --configuration Release
     - name: Test with dotnet
+      if: success()
       run: dotnet test --configuration Release --no-build
